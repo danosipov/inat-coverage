@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iNaturalist Coverage</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>iNaturalist Coverage</h1>
+      <p class="tag">What fraction of species in a place have you observed?</p>
+    </header>
+
+    <form id="query">
+      <label>
+        <span>iNaturalist Username</span>
+        <input id="user" name="user" type="text" placeholder="" required autocomplete="off" />
+      </label>
+      <label>
+        <span>Place</span>
+        <input id="place" name="place" type="text" placeholder="California" required autocomplete="off" />
+      </label>
+      <label>
+        <span>Root taxon (optional)</span>
+        <input id="taxon" name="taxon" type="text" placeholder="Insecta" autocomplete="off" />
+      </label>
+      <button type="submit">Load</button>
+    </form>
+
+    <section id="status" aria-live="polite"></section>
+    <section id="resolved" class="resolved"></section>
+    <section id="hero" hidden></section>
+    <main id="tree"></main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
