@@ -6,6 +6,9 @@ import {
 } from "./api.js";
 import { attachAutocomplete } from "./autocomplete.js";
 import { buildTree, walk } from "./tree.js";
+import { inject } from "@vercel/analytics"
+
+inject()
 
 const form = document.getElementById("query");
 const statusEl = document.getElementById("status");
