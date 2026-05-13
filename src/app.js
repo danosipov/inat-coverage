@@ -6,9 +6,6 @@ import {
 } from "./api.js";
 import { attachAutocomplete } from "./autocomplete.js";
 import { buildTree, walk } from "./tree.js";
-import { inject } from "@vercel/analytics"
-
-inject()
 
 const form = document.getElementById("query");
 const statusEl = document.getElementById("status");
@@ -295,11 +292,6 @@ function renderShareButtons(data) {
 
   const url = buildShareUrl(data);
   const text = buildShareText(data);
-
-  const xUrl =
-    "https://twitter.com/intent/tweet?" +
-    new URLSearchParams({ text: `${text} #iNaturalist`, url }).toString();
-  wrap.appendChild(shareAnchor("x", "𝕏", xUrl));
 
   const bskyUrl =
     "https://bsky.app/intent/compose?" +
